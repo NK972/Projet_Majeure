@@ -24,7 +24,7 @@ if __name__ == "__main__":
     """
     Le texte type pour se connecter au Pepper est le suivant:
         
-        python aldialog_example_load_file.py --ip $YOUR_ROBOTS_IP_ADDRESS
+        python ~/Documents/Projet Majeure/python/ALTablet.py --ip $YOUR_ROBOTS_IP_ADDRESS
         
         Pepper1 : ip = 134.214.50.49
         
