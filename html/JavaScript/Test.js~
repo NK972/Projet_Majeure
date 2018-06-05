@@ -1,9 +1,9 @@
-﻿$(document).ready(function () {
+$(document).ready(function () {
     session = new QiSession();
 
     $('#page_0').show();
     $('#page_1').hide();
-   // $('#page_2').hide();
+    $('#page_2').hide();
 	
 
 
@@ -14,37 +14,27 @@
             subscriber.signal.connect(function() {
                 $('#page_0').show();
                 $('#page_1').hide();
-                //$('#page_2').hide();
+                $('#page_2').hide();
             });
         });
 
 
-        ALMemory.subscriber("Commande_0").done(function(subscriber) {
+        ALMemory.subscriber("presentation_prepa").done(function(subscriber) {
 
             subscriber.signal.connect(function() {
-                $('#page_0').show();
-                $('#page_1').hide();
-                //$('#page_2').hide();
+                $('#page_1').show();
+                $('#page_0').hide();
+                $('#page_2').hide();
 
             });
         });
 
-	ALMemory.subscriber("eve_vers_commande").done(function(subscriber) {
+	ALMemory.subscriber("Presentation_filiere").done(function(subscriber) {
 
 		    subscriber.signal.connect(function() {
-		        $('#page_1').show();
+		        $('#page_2').show();
 		        $('#page_0').hide();
-
-
-		    });
-		});
-
-	ALMemory.subscriber("eve_commande_eau").done(function(subscriber) {
-
-		    subscriber.signal.connect(function() {
-		        $('#page_0').show();
-		        $('#page_1').hide();
-
+			   $('#page_1').hide();
 
 		    });
 		});
@@ -92,6 +82,23 @@
         console.log("click 6");
         raise('eve_commande_gazeuse', 1)
     });
+  $('#eve_vodka').on('click', function() {
+        console.log("click 7");
+        raise('eve_commande_vodka', 1)
+    });
+
+
+  $('#eve_wisky').on('click', function() {
+        console.log("click 8");
+        raise('eve_commande_wisky', 1)
+    });
+
+
+  $('#eve_pomme').on('click', function() {
+        console.log("click 9");
+        raise('eve_commande_pomme', 1)
+    });
+
 
 
 });

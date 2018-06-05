@@ -19,8 +19,8 @@
 
 <body>
 	<div id="page_0">
-		<h1 style="text-align:center;">BIENVENUE A CPE</h1>
-		<p align="center"><img src="Logo_CPE_Lyon_112009.jpg" /></p>
+		<h1>BIENVENUE A CPE</h1>
+		<p ><img src="Logo_CPE_Lyon_112009.jpg" /></p>
 	</div>
 
 	<div id="page_1">

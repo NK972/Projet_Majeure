@@ -55,50 +55,12 @@ $(document).ready(function () {
 
     $('#eve_eau').on('click', function() {
         console.log("click 1");
-        raise('eve_commande_eau', 1)
+        raise('presentation_prepa', 1)
     });
 
     $('#eve_soda').on('click', function() {
         console.log("click 2");
-        raise('eve_commande_soda', 1)
+        raise('Presentation_filiere', 1)
     });
-
-    $('#eve_biere').on('click', function() {
-        console.log("click 3");
-        raise('eve_commande_biere', 1)
-    });
-
-    $('#eve_orange').on('click', function() {
-        console.log("click 4");
-        raise('eve_commande_orange', 1)
-    });
-
-    $('#eve_cocktail').on('click', function() {
-        console.log("click 5");
-        raise('eve_commande_cocktail', 1)
-    });
-
-    $('#eve_gazeuse').on('click', function() {
-        console.log("click 6");
-        raise('eve_commande_gazeuse', 1)
-    });
-  $('#eve_vodka').on('click', function() {
-        console.log("click 7");
-        raise('eve_commande_vodka', 1)
-    });
-
-
-  $('#eve_wisky').on('click', function() {
-        console.log("click 8");
-        raise('eve_commande_wisky', 1)
-    });
-
-
-  $('#eve_pomme').on('click', function() {
-        console.log("click 9");
-        raise('eve_commande_pomme', 1)
-    });
-
-
-
+  
 });
