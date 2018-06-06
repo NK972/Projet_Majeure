@@ -18,7 +18,7 @@ def initFichieTxt():
     
 def write(string):
     fichier = open("Communication/Communication_entre_python.txt","a+")
-    fichier.write(string+"\r\n")
+    fichier.write(string+"\n")
     fichier.close()
     
 def read():
@@ -26,7 +26,9 @@ def read():
     file_line = fichier.readlines();
     for x in file_line:
         print(x)
+    fichier.close()
     return file_line[-1]
+
 
 if __name__ == "__main__":
    main()
