@@ -38,9 +38,9 @@ Pepper1 peut être remplacé par l'adrresse ip de la cible
 
 ->Envoyer un dossier du PC au robot: 
 	->Pour l'index:
-		scp -r -p ~/Documents/Projet_Majeure nao@Pepper1/home/.local/share/PackageManager/apps/Projet_MajeureXXX
+		scp -r -p ~/Documents/Projet_Majeure nao@134.214.50.49/home/.local/share/PackageManager/apps/Projet_MajeureXXX
 	->Pour le Dialogue:
-		scp -r -p ~/Documents/Projet_Majeure nao@Pepper1/home/projet/Robotcpe
+		scp -r -p ~/Documents/Projet_Majeure nao@134.214.50.49/home/projet/Robotcpe
 
 ->Faut peut surpprimer les fichiers:
 	ssh nao@Pepper1 "rm -rf /home/.local/share/PackageManager/apps/Projet_Majeure"

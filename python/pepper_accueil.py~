@@ -49,7 +49,8 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, default=9559,
                         help="port number, the default value is OK in most cases")
     parser.add_argument("--topic-path", type=str,
-                        default='/fs03/share/users/thomas.lesbros/home/Documents/PM/Projet_Majeure/Robotcpe/Dialogue/test1.top',
+                        #default='/fs03/share/users/thomas.lesbros/home/Documents/PM/Projet_Majeure/Robotcpe/Dialogue/test1.top',
+			default='/home/nao/projects/Robotcpe/Dialogue/test2.top',
                         help="absolute path of the dialog topic file (on the robot)")
 
     args = parser.parse_args()

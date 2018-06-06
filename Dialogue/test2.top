@@ -24,16 +24,16 @@ concept:(amphi) [amphi]
 u:(~bonjour) ~bonjour je suis le robot Pépeur. Je peux vous assister dans votre visite à Cépéheu. Je peux vous présenter l'école rapidement ou bien je peux développer l'un des sujets suivants : prépa, filières, majeures, stages ou césure. $accueil_0=1 ^gotoReactivate(debut)
 
 proposal: %debut Que voulez vous savoir?
-    u1:(~presentation) Cépéheu est une école d'ingénieurs qui délivre un diplôme reconnu par la commission des titres d'ingénieur  $accueil_0=1 ^gotoReactivate(suite)
+    u1:(~presentation) Cépéheu est une école d'ingénieurs qui délivre un diplôme reconnu par la commission des titres d'ingénieur $accueil_0=1 ^gotoReactivate(suite)
     u1:(~prepa) Cépéheu propose après le bac de rejoindre la prépa intégrée de l'institution des Chartreux. Cette formation scientifique en 2 ans prépare au mieux les étudiants pour suivre les cours de Cépéheu. $presentation_prepa=1 ^gotoReactivate(suite)
-    u1:(~filieres) Cépéheu propose 3 filières : la meilleure, sciences du numérique mais aussi Chimie et génie des Procédés et enfin, en alternance uniquement, la filière Informatique Raéseaux et Communication. $Presentation_filiere=1 ^gotoReactivate(suite)
+    u1:(~filieres) Cépéheu propose 3 filières : la meilleure, sciences du numérique mais aussi Chimie et génie des Procédés et enfin, en alternance uniquement, la filière Informatique Réseaux et Communication. $Presentation_filiere=1 ^gotoReactivate(suite)
     u1:(~majeure) Cépéheu propose plusieurs majeures. Dans la filière sciences du numérique, il y a les majeures Robotique, la meilleure mais aussi électronique, Réseaux, Images, Informatique et Plastronique depuis peu. En Chimie, les majeures sont : formulation, science du vivant, environnement et génie des procédés $Presentation_filiere=1 ^gotoReactivate(suite)
-    u1:(~stage) Ici, à Cépéheu, nous pensons que les élèves doivent déjà avoir un pied dans l'entreprise lorsqu'ils finissent leurs études. Pour cela, les élèves ont à effectuer plusieurs stages le long de leur cursus afin d'aquérir de l'expérience. $Presentation_stage=1 ^gotoReactivate(suite)
-    u1:(~cesure) Les élèves de Cépéheu peuvent réaliser s'ils le souhaitent une année de césure à l'étranger. Ceci leur permet d'avoir une première experience professionnelle longue dans le monde de l'entreprise. $Presentation_stage=1  ^gotoReactivate(suite)
+    u1:(~stage) Ici, à Cépéheu, nous pensons que les élèves doivent déjà avoir un pied dans l'entreprise lorsqu'ils finissent leurs études. Pour cela, les élèves ont à effectuer plusieurs stages le long de leur cursus afin d'aquérir de l'expérience. $stage=1 ^gotoReactivate(suite)
+    u1:(~cesure) Les élèves de Cépéheu peuvent réaliser s'ils le souhaitent une année de césure à l'étranger. Ceci leur permet d'avoir une première experience professionnelle longue dans le monde de l'entreprise. $stage=1 ^gotoReactivate(suite)
     
 proposal: %suite Voulez vous savoir autre chose?
     u1:(~oui) D'accord ^gotoReactivate(debut)
-    u1:(~non) D'accord, ~adieu 
+    u1:(~non) D'accord, ~adieu
 
 u:(~amphi) Les amphis se trouvent en bas des escaliers avec sur la droite le petit amphi et tout droit le grand amphi
 u:(~repete) Je répète ^sameProposal
@@ -43,4 +43,3 @@ u:(~adieu) ~adieu
 u:(e:MiddleTactilTouched) Tu touches ma tête là
 u:(e:RightBumperPressed) C'est mon pied ça
 u:(e:LeftBumperPressed) C'est mon pied ça
-
