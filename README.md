@@ -4,20 +4,32 @@
 
 Objectif : 
 	null
-Fonctionnalitée:
+FonctionnalitÃ©e:
 	null
 Choix: 
 	null
-Validée:
+ValidÃ©e:
 	null
 En cours:
 	null
 Modules:
 	A remplir
+	
+=======================Ou se trouve les fichiers dont on a besion===============
 
+Pour le site internet :
+	-Sur le robot:
+		/home/.local/share/PackageManager/apps/Projet_Majeure
+	-Sur le PC:
+		~/Documents/Projet_Majeure/html
+Pour le Dialogue:
+	-Sur le robot:
+	
+	-Sur le PC:
+		
 ========================Les lignes de commande====================================
 
-Pepper1 peut être remplacé par l'adrresse ip de la cible
+Pepper1 peut Ãªtre remplacÃ© par l'adrresse ip de la cible
 
 ->Aller rapidement dans un dossier:
 	cd ~/Documents/Projet_Majeur
@@ -34,6 +46,7 @@ Pepper1 peut être remplacé par l'adrresse ip de la cible
 	ssh nao@Pepper1 "rm -rf /home/.local/share/PackageManager/apps/Projet_Majeure"
 	ssh nao@Pepper1 "rm -rf /home/projet/Robotcpe"
 
+-Lancer les fichiers .py en ligne de commande:
 
 
 =========================Lien vers web service======================================
@@ -43,51 +56,51 @@ https://www.chucknorrisfacts.fr/api/api # Les blagues de chuck norris
 
 ========================Utilisation de Git=========================================
 
-Please mettre que les dossiers suivants sur GitHub, afin de bien distingué le bon du mauvais.
+Please mettre que les dossiers suivants sur GitHub, afin de bien distinguÃ© le bon du mauvais.
 
 Avant toutes utillisation de git aller dans le dossier "giter" puis faire la commande :
-git pull #Cela permet de mettre à jour le dossier sur le pc
-git commit -m "USER" #permet de préparer l'envoie de fichier
+git pull #Cela permet de mettre Ã  jour le dossier sur le pc
+git commit -m "USER" #permet de prÃ©parer l'envoie de fichier
 git push #Effectue l'envoie
 
 Attention : 
-git add /Chemin #permet l'ajout de nouveau composant au dépôt git (sur le site)
+git add /Chemin #permet l'ajout de nouveau composant au dÃ©pÃ´t git (sur le site)
 
 =======================Compte Rendu 1: 05/06/2018==================================
 
 Fonctionnel : 
-	-> Dialogue fonctionnel à complèter.
-	-> Tablette fonctionnel à complèter.
-	-> Interaction tablette fonctionnel à complèter et améliorer.
+	-> Dialogue fonctionnel Ã  complÃ¨ter.
+	-> Tablette fonctionnel Ã  complÃ¨ter.
+	-> Interaction tablette fonctionnel Ã  complÃ¨ter et amÃ©liorer.
 
 En cours : 
-	->Les blagues de chuck norris, à intergrer aux fichiers ALTextToSpeech
+	->Les blagues de chuck norris, Ã  intergrer aux fichiers ALTextToSpeech
 	->Echolocalisation, voir le module 
 
 A faire : 
-	->Voir si il est possible de lancer tous les fichiers py à partir du PC
-	->Page de menu lorsque le robot fait la présentation avec les différentes fonctionalités.
-	->Lien en deux fichiers .py les possibilités sont :
+	->Voir si il est possible de lancer tous les fichiers py Ã  partir du PC
+	->Page de menu lorsque le robot fait la prÃ©sentation avec les diffÃ©rentes fonctionalitÃ©s.
+	->Lien en deux fichiers .py les possibilitÃ©s sont :
 		-> Ecriture dans un fichier, le plus simple
 		-> Socket (Serveur/Clients), le plus pousser mais risque de perte de temps
-		-> Multiprocessing, bof assez bizare comment lancer différents process ...
-		-> Autres protocole de communiquation, A vos Idées
+		-> Multiprocessing, bof assez bizare comment lancer diffÃ©rents process ...
+		-> Autres protocole de communiquation, A vos IdÃ©es
 	->Les Webs Service: 
 		-Reconnaissance de face
 		-Reconnaissance de genre
-		-A vos idées
-	->Des mouvements Prédefinies. 
+		-A vos idÃ©es
+	->Des mouvements PrÃ©definies. 
 	->Selon les phrases des comportements 
 
 Conclusion :
-	Après 8h, nous avons peu avancer alors que nous n'avons pas encore attaquer les modules les plus dur. Il faut que l'on fournisse un travail plus conséquent.
-	Il faudrait aussi penser à nous fixer un Cahier des charges afin que l'on sache où l'on va. 
+	AprÃ¨s 8h, nous avons peu avancer alors que nous n'avons pas encore attaquer les modules les plus dur. Il faut que l'on fournisse un travail plus consÃ©quent.
+	Il faudrait aussi penser Ã  nous fixer un Cahier des charges afin que l'on sache oÃ¹ l'on va. 
 	
 =================================Les liens utiles==============================================
 ************naoqi****************
 http://doc.aldebaran.com/2-4/naoqi/audio/altexttospeech-api.html #Pemet au Pepper de communiquer
 http://doc.aldebaran.com/2-4/naoqi/peopleperception/alfacedetection-api.html #Permet au Pepper de faire de la reconnaissance facial sans wed service.
-http://doc.aldebaran.com/2-4/naoqi/audio/alsoundlocalization-api.html#ALSoundLocalizationProxy::setParameter__ssCR.AL::ALValueCR #Détecte la position d'un bruit.
+http://doc.aldebaran.com/2-4/naoqi/audio/alsoundlocalization-api.html#ALSoundLocalizationProxy::setParameter__ssCR.AL::ALValueCR #DÃ©tecte la position d'un bruit.
 http://doc.aldebaran.com/2-5/naoqi/core/almemory-tuto.html #Gestionnaire d'interruption.
 
 ============================Quelques installations utiles=====================================
@@ -98,7 +111,7 @@ Tous ceci se passe dans le terminal
 *********algorithmia******** 
 2 - install "algorithmia":
 	python pip intall --user algorithmia
-Vérifier votre installation:
+VÃ©rifier votre installation:
 	python
 	import Algorithmia
 
