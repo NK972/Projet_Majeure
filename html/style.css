@@ -1,0 +1,34 @@
+body, html{
+  background-image:url("fond-ecran.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+#page_01 img{
+    overflow:hidden;
+    -webkit-border-radius:20px;
+
+  
+    width:220px;
+    height:220px;
+    display: inline-block;
+   
+}
+
+#page_01 a{
+	margin-left: 25%;
+}
+#page_3 img{
+    overflow:hidden;
+    -webkit-border-radius:40px;
+
+    width:250px;
+    height:250px;
+    display: inline-block;
+   
+}
+#eti, #cgp {
+	margin-left: 25%;
+}
+#irc{
+	margin-left: 43%;
+}

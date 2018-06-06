@@ -15,7 +15,7 @@ def main(session, topic_path):
     # Getting the service ALDialog
     ALDialog = session.service("ALDialog")
     ALDialog.setLanguage("French")
-
+    #ALDialog.setConfidenceThreshold("BNF",0.5)
     # Loading the topic given by the user (absolute path is required)
     topf_path =topic_path.decode('utf-8')
     topic_name = ALDialog.loadTopic(topf_path.encode('utf-8'))

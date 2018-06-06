@@ -40,7 +40,7 @@ Pepper1 peut être remplacé par l'adrresse ip de la cible
 	->Pour l'index:
 		scp -r -p ~/Documents/Projet_Majeure nao@134.214.50.49/home/.local/share/PackageManager/apps/Projet_MajeureXXX
 	->Pour le Dialogue:
-		scp -r -p ~/Documents/Projet_Majeure nao@134.214.50.49/home/projet/Robotcpe
+		scp -r -p nao@134.214.50.49:/home/nao/.local/share/PackageManager/apps/WAN  .
 
 ->Faut peut surpprimer les fichiers:
 	ssh nao@Pepper1 "rm -rf /home/.local/share/PackageManager/apps/Projet_Majeure"
@@ -95,13 +95,29 @@ A faire :
 Conclusion :
 	Après 8h, nous avons peu avancer alors que nous n'avons pas encore attaquer les modules les plus dur. Il faut que l'on fournisse un travail plus conséquent.
 	Il faudrait aussi penser à nous fixer un Cahier des charges afin que l'on sache où l'on va. 
+
+======================Compte Rendu 2: 06/06/2018===============================================
+
+fonctionnel:
+	->Les blagues de chuck norris
+	->Les interruptions avec le ALMemory
+	->Le translate avec Algorithmia 
+	->Localisation de la personne qui parle au robot 
+à faire : 
+	->Suivre la personne qui parle avec tout le corps (whole body)
+	->Enrichir le dialogue 
+	->translate integrer au code de Almemory, il faut aussi le text.
+	->Check
 	
+Coclusion:
+	Peu satisfait du résultat! A booster et mieux organiser la répartion des tâches et Plus de motivation et d'entraide. 
 =================================Les liens utiles==============================================
 ************naoqi****************
 http://doc.aldebaran.com/2-4/naoqi/audio/altexttospeech-api.html #Pemet au Pepper de communiquer
 http://doc.aldebaran.com/2-4/naoqi/peopleperception/alfacedetection-api.html #Permet au Pepper de faire de la reconnaissance facial sans wed service.
 http://doc.aldebaran.com/2-4/naoqi/audio/alsoundlocalization-api.html#ALSoundLocalizationProxy::setParameter__ssCR.AL::ALValueCR #Détecte la position d'un bruit.
-http://doc.aldebaran.com/2-5/naoqi/core/almemory-tuto.html #Gestionnaire d'interruption.
+http://doc.aldebaran.com/2-5/naoqi/core/almemory-
+tuto.html #Gestionnaire d'interruption.
 
 ============================Quelques installations utiles=====================================
 Tous ceci se passe dans le terminal

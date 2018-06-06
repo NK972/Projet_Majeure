@@ -4,6 +4,9 @@ Created on Wed Jun 06 08:40:45 2018
 
 @author: CASTRY
 """
+
+from translate import Translate 
+
 def main():
     initFichieTxt()
     write("Hello World")

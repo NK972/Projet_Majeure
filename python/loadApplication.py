@@ -16,7 +16,7 @@ def main(robot_session):
 
         # Display the index.html page of a behavior name j-tablet-browser
         # The index.html must be in a folder html in the behavior folder
-        tabletService.loadApplication("projet_accueil")
+        tabletService.loadApplication("WAN")
         tabletService.showWebview()
         enCours = 1;
         while (int(enCours)):

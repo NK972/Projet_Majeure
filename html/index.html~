@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-        	<link rel="stylesheet" href="index.css" />
+        	
 
 		<title>Accueil_Pepper</title>
 
@@ -11,26 +11,45 @@
 			   maximum-scale = 1.34" />
 		<meta/>
 		<script src="jquery-1.11.2.min.js"></script>
-		<script src="js/Test.js"></script>
+		<script src="JavaScript/Test.js"></script>
 		<script src="/libs/qimessaging/1.0/qimessaging.js"></script>
 		
 
 	</head>
 
 <body>
-	<div id="page_0">
-		<h1>BIENVENUE A CPE</h1>
-		<p ><img src="Logo_CPE_Lyon_112009.jpg" /></p>
+	<div id="page_00">
+		<p align="center"><img src="Pepperrr13n.jpg" alt="" /></p>
 	</div>
 
+	<div id="page_0">
+		<h1 style="text-align:center;">BIENVENUE A CPE</h1>
+		<p align="center"><img src="Logo_CPE_Lyon_112009.jpg" /></p>
+	</div>	
+
+	<div id="page_01">
+		<h1 style="text-align:center;">BIENVENUE A CPE</h1>
+		<a id="suite_pepper" ><img src="pepper.JPG" /></a>
+		<a href="page_0"><img src="tablette_pepper.JPG" /></a>
+	</div>
+
+	
 	<div id="page_1">
-	<h1 style="text-align:center;"> CLASSES PREPA CPE LYON</h1>
+		<h1 style="text-align:center;"> CLASSES PREPA CPE LYON</h1>
 		<p align="center"><img src="prepa.jpg"/></p>
-	
 	</div>
+
 	<div id="page_2">
-	<h1 style="text-align:center;">VOICI LES DIFFERENTES FILIERES</h1>
-	<p align="center"><img src="filiere.JPG" alt="" /></p>
-	
+		<h1 style="text-align:center;">VOICI LES DIFFERENTES FILIERES</h1>
+		<p align="center"><img src="filiere.JPG" alt="" /></p>
+		<a href="https://www.cpe.fr"><p style="text-align:center;">Appuyez pour faire un tour sur le site de l'école</p></a>
 	</div>
+
+	<div id="page_3">
+		<h1 style="text-align:center;">VOICI LES DIFFERENTES FILIERES</h1>
+		<a id="eti" href="#"><img src="eti.JPG" /></a>
+		<a id="cgp" href="#"><img src="cgp.JPG" /></a>
+		<a id="irc" href="#"><img src="irc.JPG" /></a>
+	</div>
+
 	</body>

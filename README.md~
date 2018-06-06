@@ -38,9 +38,9 @@ Pepper1 peut être remplacé par l'adrresse ip de la cible
 
 ->Envoyer un dossier du PC au robot: 
 	->Pour l'index:
-		scp -r -p ~/Documents/Projet_Majeure nao@Pepper1/home/.local/share/PackageManager/apps/Projet_MajeureXXX
+		scp -r -p ~/Documents/Projet_Majeure nao@134.214.50.49/home/.local/share/PackageManager/apps/Projet_MajeureXXX
 	->Pour le Dialogue:
-		scp -r -p ~/Documents/Projet_Majeure nao@Pepper1/home/projet/Robotcpe
+		scp -r -p nao@134.214.50.49:/home/nao/.local/share/PackageManager/apps/WAN  .
 
 ->Faut peut surpprimer les fichiers:
 	ssh nao@Pepper1 "rm -rf /home/.local/share/PackageManager/apps/Projet_Majeure"
@@ -101,7 +101,8 @@ Conclusion :
 http://doc.aldebaran.com/2-4/naoqi/audio/altexttospeech-api.html #Pemet au Pepper de communiquer
 http://doc.aldebaran.com/2-4/naoqi/peopleperception/alfacedetection-api.html #Permet au Pepper de faire de la reconnaissance facial sans wed service.
 http://doc.aldebaran.com/2-4/naoqi/audio/alsoundlocalization-api.html#ALSoundLocalizationProxy::setParameter__ssCR.AL::ALValueCR #Détecte la position d'un bruit.
-http://doc.aldebaran.com/2-5/naoqi/core/almemory-tuto.html #Gestionnaire d'interruption.
+http://doc.aldebaran.com/2-5/naoqi/core/almemory-
+tuto.html #Gestionnaire d'interruption.
 
 ============================Quelques installations utiles=====================================
 Tous ceci se passe dans le terminal

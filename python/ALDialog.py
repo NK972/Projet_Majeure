@@ -5,5 +5,11 @@ Created on Fri Jun  1 16:35:20 2018
 @author: nicolas.castry
 """
 
-import os
-os.chdir("/fs03/share/users/nicolas.castry/home/Documents/Projet Majeur 2/Projet_Majeure/Dialogue/dialogue.txt")
+import qi
+import argparse
+import sys
+
+def RobotDit(session,string): 
+    tts = session.service("ALTextToSpeech")
+    tts.say(string)
+
