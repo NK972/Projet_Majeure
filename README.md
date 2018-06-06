@@ -32,15 +32,14 @@ Pour le Dialogue:
 Pepper1 peut être remplacé par l'adrresse ip de la cible
 
 ->Aller rapidement dans un dossier:
-	cd ~/Documents/Projet_Majeur
-	ssh nao@Pepper1 "cd /home/.local/share/PackageManager/apps/Projet_Majeure"
-	ssh nao@Pepper1 "cd /home/projet/Robotcpe"
+	cd ~/Documents/Git/Projet_Majeure
+	ssh nao@134.214.50.49
 
 ->Envoyer un dossier du PC au robot: 
 	->Pour l'index:
-		scp -r -p ~/Documents/Projet_Majeure nao@134.214.50.49/home/.local/share/PackageManager/apps/Projet_MajeureXXX
+		scp -r -p ~/Documents/Git/Projet_majeure/html nao@134.214.50.49:/home/nao/.local/share/PackageManager/apps/WAN/html
 	->Pour le Dialogue:
-		scp -r -p nao@134.214.50.49:/home/nao/.local/share/PackageManager/apps/WAN  .
+		scp -r -p nao@134.214.50.49:/home/nao/.local/share/PackageManager/apps/WAN/html ~/Documents/Git/Projet_majeure/html
 
 ->Faut peut surpprimer les fichiers:
 	ssh nao@Pepper1 "rm -rf /home/.local/share/PackageManager/apps/Projet_Majeure"
