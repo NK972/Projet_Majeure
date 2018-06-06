@@ -7,6 +7,7 @@ import qi
 import sys
 import argparse
 
+pyhtonModule = none
 
 class myModule(ALModule):
     """
@@ -21,17 +22,15 @@ def main(session):
     """
     Initialisation of qi framework and event detection.
     """
-
-    
-    
     ALMemory = session.service("ALMemory")
     
-    ALMemory.subscribeToEvent("My event","pythonModule", "data")
+    ALMemory.subscribeToEvent("Myevent","pythonModule", "data")
     
     try:
         #Appuyer sur entrer pour mettre fin au service
         raw_input("\nSpeak to the robot using rules from the just loaded .top file. Press Enter when finished:")
     finally:
+        broker.shutdown()
         print("\nFin du service ALTabletService") 
 
 
@@ -44,6 +43,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     session = qi.Session()
+    broker = ALBroker("pythonBroker","0.0.0.0",0,args.ip,args.port)
     try:
         session.connect("tcp://{}:{}".format(args.ip))
     except RuntimeError:
