@@ -13,6 +13,7 @@ from translate import Translate
 from Blagues import recupBlague
 
 session = None
+memory = None
 
 def write(string):
     fichier = open("Communication/Communication_entre_python.txt","a+")
@@ -28,6 +29,7 @@ class HumanGreeter(object):
         """
         Initialisation of qi framework and event detection.
         """
+        global memory
         global session
         super(HumanGreeter, self).__init__()
         app.start()
@@ -57,8 +59,12 @@ class HumanGreeter(object):
         self.subscriber_Blague = self.memory.subscriber("Blague")
         self.subscriber_Blague.signal.connect(self.Blague_event)
         #
-        self.subscriber_Blague = self.memory.subscriber("Translate")
-        self.subscriber_Blague.signal.connect(self.Translate_event)
+        self.subscriber_Translate = self.memory.subscriber("translate")
+        self.subscriber_Translate.signal.connect(self.Translate_event)
+
+        #
+        self.subscriber_Translate_vers_Java = self.memory.subscriber("Translate_vers_Java")
+        self.subscriber_Translate_vers_Java.signal.connect(self.Translate_vers_Java_event)
         
         # Get the services ALTextToSpeech and ALFaceDetection.
         self.tts = session.service("ALTextToSpeech")
@@ -83,9 +89,17 @@ class HumanGreeter(object):
         write("DemandeDeBlague")
         RobotDit(session,recupBlague())
     def Translate_event(self, value):
-        print("Evenement : une demande de traduction")
-        session.raiseEvent("Translate_vers_Java", "Tranlation ^^")
-        
+        print("Evenement : Tranlate ??")
+        if(value!="1"):
+            print("Evenement : une demande de traduction")
+            memory=session.service("ALMemory")
+            val = memory.getData("translate")
+            print(val)
+        #memory.raiseEvent("Translate_vers_Java", Translate(val))
+    def Translate_vers_Java_event(self, value):
+        print("Evenement : Envoie de la traduction vers java")
+        print(value)
+
         
         
         
