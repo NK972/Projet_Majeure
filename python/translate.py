@@ -17,7 +17,6 @@ def Translate(string):
     print(algo.pipe(input))
     
     
-    
 ## Test
     
 #string="Ich habe kein zeit!"

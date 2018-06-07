@@ -35,9 +35,6 @@ class HumanGreeter(object):
         # Get the service ALMemory.
         self.memory = session.service("ALMemory")
         # Connect the event callback.
-#        self.subscriber = self.memory.subscriber("FaceDetected")
-#        self.subscriber.signal.connect(self.on_human_tracked)
-        
         #
         self.subscriber_acceuil = self.memory.subscriber("accueil")
         self.subscriber_acceuil.signal.connect(self.accueil_event)
@@ -59,6 +56,9 @@ class HumanGreeter(object):
         #
         self.subscriber_Blague = self.memory.subscriber("Blague")
         self.subscriber_Blague.signal.connect(self.Blague_event)
+        #
+        self.subscriber_Blague = self.memory.subscriber("Translate")
+        self.subscriber_Blague.signal.connect(self.Translate_event)
         
         # Get the services ALTextToSpeech and ALFaceDetection.
         self.tts = session.service("ALTextToSpeech")
@@ -67,7 +67,7 @@ class HumanGreeter(object):
         self.got_face = False
 
     def accueil_event(self, value):
-        print("accueil_event")
+        print("Event : Accueil_event")
     def accueil_0_event(self, value):
         print("accueil_0_event")
     def presentation_prepa_event(self, value):
@@ -82,37 +82,15 @@ class HumanGreeter(object):
         print("une demande de blague")
         write("DemandeDeBlague")
         RobotDit(session,recupBlague())
-
-    def on_human_tracked(self, value):
-        """
-        Callback for event FaceDetected.
-        """
-        if value == []:  # empty value when the face disappears
-            self.got_face = False
-        elif not self.got_face:  # only speak the first time a face appears
-            self.got_face = True
-            print "I saw a face!"
-            self.tts.say("Hello, you!")
-            # First Field = TimeStamp.
-            timeStamp = value[0]
-            print "TimeStamp is: " + str(timeStamp)
-
-            # Second Field = array of face_Info's.
-            faceInfoArray = value[1]
-            for j in range( len(faceInfoArray)-1 ):
-                faceInfo = faceInfoArray[j]
-
-                # First Field = Shape info.
-                faceShapeInfo = faceInfo[0]
-
-                # Second Field = Extra info (empty for now).
-                faceExtraInfo = faceInfo[1]
-
-                print "Face Infos :  alpha %.3f - beta %.3f" % (faceShapeInfo[1], faceShapeInfo[2])
-                print "Face Infos :  width %.3f - height %.3f" % (faceShapeInfo[3], faceShapeInfo[4])
-                print "Face Extra Infos :" + str(faceExtraInfo)
-                
-
+    def Translate_event(self, value):
+        print("Evenement : une demande de traduction")
+        session.raiseEvent("Translate_vers_Java", "Tranlation ^^")
+        
+        
+        
+        
+        
+        
     def run(self):
         """
         Loop on, wait for events until manual interruption.
