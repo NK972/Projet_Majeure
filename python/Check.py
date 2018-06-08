@@ -9,7 +9,7 @@ import time
 
 robot_ip = "134.214.50.49"
 
-def main():
+def cheikh_action():
     """
     This example uses ALDialog methods.
     It's a short dialog session with one topic.
@@ -69,4 +69,4 @@ def main():
     #motion_service.rest()
 
 if __name__ == "__main__":
-    main()
+    cheikh_action()

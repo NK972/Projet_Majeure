@@ -11,6 +11,7 @@ import argparse
 from ALDialog import RobotDit
 from translate import Translate
 from Blagues import recupBlague
+from Check import cheikh_action
 
 session = None
 memory = None
@@ -73,6 +74,9 @@ class HumanGreeter(object):
         #
         self.subscriber_Translate_vers_Java = self.memory.subscriber("Translate_vers_Java")
         self.subscriber_Translate_vers_Java.signal.connect(self.Translate_vers_Java_event)
+            
+        self.subscriber_check = self.memory.subscriber("cheikh")
+        self.subscriber_check.signal.connect(self.check_event)
         
         # Get the services ALTextToSpeech and ALFaceDetection.
         self.tts = session.service("ALTextToSpeech")
@@ -106,7 +110,9 @@ class HumanGreeter(object):
     def Translate_vers_Java_event(self, value):
         print("Evenement : Envoie de la traduction vers java"+value)    
         print(value)
-    def check(self, value):
+    def check_event(self, value):
+        print("Evenement: Effectuer l'action de check")
+        cheikh_action()
         
 
 

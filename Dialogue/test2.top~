@@ -16,12 +16,16 @@ concept:(majeure) [majeure option]
 concept:(stage) [stage]
 concept:(cesure) [césure "année de césure"]
 concept:(amphi) [amphi]
+concept:(check) ["tope la" check tchèque]
 
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
 
 # Replying to speech
 u:(~bonjour) $accueil=1 ~bonjour je suis le robot Pépeur. Je peux vous assister dans votre visite à Cépéheu. Je peux vous présenter l'école rapidement ou bien je peux développer l'un des sujets suivants : prépa, filières, majeures, stages ou césure. ^gotoReactivate(debut)
+
+#Checking the user
+u:(~check) Allez, tchèque! $cheikh=1
 
 proposal: %debut Que voulez vous savoir?
     u1:(~presentation) $accueil_0=1 Cépéheu est une école d'ingénieurs qui délivre un diplôme reconnu par la commission des titres d'ingénieur  ^gotoReactivate(suite)
@@ -44,6 +48,6 @@ u:(~repete) Je répète ^sameProposal
 u:(~merci) ~deRien
 u:(~adieu) ~adieu
 
-u:(e:MiddleTactilTouched) Tu touches ma tête là $Translate=1
+u:(e:MiddleTactilTouched) Tu touches ma tête là $translate=1
 u:(e:RightBumperPressed) C'est mon pied ça
 u:(e:LeftBumperPressed) C'est mon pied ça
