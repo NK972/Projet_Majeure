@@ -99,6 +99,8 @@ class HumanGreeter(object):
     def Translate_vers_Java_event(self, value):
         print("Evenement : Envoie de la traduction vers java")
         print(value)
+    def check(self, value):
+        
 
         
         

@@ -33,32 +33,29 @@ def main():
 
     
     print "This is a Pepper check, press Ctrl+c to stop the programm"    
-    motion_service.closeHand("LHand")
     motion_service.setAngles("LShoulderPitch",-0.349066,0.2)
     motion_service.setAngles("LElbowYaw",0,0.2)
     motion_service.setAngles("LWristYaw",0,0.2)
     motion_service.setAngles("LShoulderRoll",0.174533,0.2)
     motion_service.setAngles("LElbowRoll",-0.174533,0.2)
     motion_service.closeHand("LHand")
-    
-    time.sleep(0.3)
-    motion_service.closeHand("LHand")
+
     tts.say("Boume!")
     
     motion_service.openHand("LHand")
-    motion_service.setAngles("LShoulderRoll",0.174533,0.2)
-    motion_service.setAngles("LShoulderPitch",1.57,0.2)
-    motion_service.setAngles("LElbowRoll",-1.39626,0.2) 
+    motion_service.setAngles("LShoulderRoll",0.226893,0.2)
+    motion_service.setAngles("LShoulderPitch",1.0472,0.2)
+    motion_service.setAngles("LElbowRoll",-1.18682,0.2) 
     motion_service.setAngles("LElbowYaw",-1.57,0.2)
-    motion_service.setAngles("LWristYaw",0,0.2)
+    motion_service.setAngles("LWristYaw",0.02,0.2)
 
     time.sleep(1)
     
-    motion_service.setAngles("LShoulderPitch",1.57,0.2)
-    motion_service.setAngles("LShoulderRoll",0,0.2)
-    motion_service.setAngles("LElbowRoll",0,0.2) 
-    motion_service.setAngles("LElbowYaw",0,0.2)
-    motion_service.setAngles("LWristYaw",-1.57,0.2)
+    motion_service.setAngles("LShoulderPitch",1.76278,0.2)
+    motion_service.setAngles("LShoulderRoll",0.1,0.2)
+    motion_service.setAngles("LElbowRoll",-0.1,0.2) 
+    motion_service.setAngles("LElbowYaw",-1.366593,0.2)
+    motion_service.setAngles("LWristYaw",0.04,0.2)
     
     try:
         while True:
