@@ -15,7 +15,7 @@ def main(session, topic_path):
     # Getting the service ALDialog
     ALDialog = session.service("ALDialog")
     ALDialog.setLanguage("French")
-
+    #ALDialog.setConfidenceThreshold("BNF",0.5)
     # Loading the topic given by the user (absolute path is required)
     topf_path =topic_path.decode('utf-8')
     topic_name = ALDialog.loadTopic(topf_path.encode('utf-8'))
@@ -26,13 +26,13 @@ def main(session, topic_path):
 
     # Starting the dialog engine - we need to type an arbitrary string as the identifier
     # We subscribe only ONCE, regardless of the number of topics we have activated
-    ALDialog.subscribe('ExampleDialog_frf')
+    ALDialog.subscribe('Dialog')
 
     try:
         raw_input("\nSpeak to the robot using rules from the just loaded .top file. Press Enter when finished:")
     finally:
         # stopping the dialog engine
-        ALDialog.unsubscribe('ExampleDialog_frf')
+        ALDialog.unsubscribe('Dialog')
 
         # Deactivating the topic
         ALDialog.deactivateTopic(topic_name)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
                         help="port number, the default value is OK in most cases")
     parser.add_argument("--topic-path", type=str,
                         #default='/fs03/share/users/thomas.lesbros/home/Documents/PM/Projet_Majeure/Robotcpe/Dialogue/test1.top',
-			default='/home/nao/projects/Robotcpe/Dialogue/test2.top',
+			default='/home/nao/projects/WAN/Dialogue/test2.top',
                         help="absolute path of the dialog topic file (on the robot)")
 
     args = parser.parse_args()

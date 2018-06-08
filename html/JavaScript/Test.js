@@ -1,13 +1,15 @@
 $(document).ready(function () {
 	session = new QiSession();
-	$('#page_01').show();
-	$('#page_00').hide();
+	$('#page_3').show();
+	$('#page_01').hide();
 	$('#page_0').hide();
 	$('#page_1').hide();
 	$('#page_2').hide();
-	$('#page_3').hide();
-	
-
+	$('#page_eti').hide();
+	$('#page_00').hide();
+	$('#Translate_Java').hide();
+	$('#page_irc').hide();
+	$('#page_cgp').hide();
 
     session.service("ALMemory").done(function(ALMemory) {
 
@@ -15,12 +17,15 @@ $(document).ready(function () {
 
             subscriber.signal.connect(function() {
                 $('#page_00').show();
-                $('#page_00').hide();
+                $('#page_0').hide();
 		$('#page_01').hide();
 		$('#page_1').hide();
 		$('#page_2').hide();
 		$('#page_3').hide();
-		
+		$('#Translate_Java').hide();
+		$('#page_irc').hide();
+		$('#page_eti').hide();
+		$('#page_cgp').hide();
 
             });
 
@@ -34,8 +39,10 @@ $(document).ready(function () {
 		$('#page_1').hide();
 		$('#page_2').hide();
 		$('#page_3').hide();
-		
-
+		$('#Translate_Java').hide();
+		$('#page_irc').hide();
+		$('#page_eti').hide();
+		$('#page_cgp').hide();
             });
 
         });
@@ -49,7 +56,10 @@ $(document).ready(function () {
 		$('#page_00').hide();
 		$('#page_2').hide();
 		$('#page_3').hide();
-		
+		$('#Translate_Java').hide();
+		$('#page_irc').hide();
+		$('#page_eti').hide();
+		$('#page_cgp').hide();
             });
         });
 
@@ -62,7 +72,10 @@ $(document).ready(function () {
 		$('#page_00').hide();
 		$('#page_2').hide();
 		$('#page_3').hide();
-		
+		$('#Translate_Java').hide();
+		$('#page_irc').hide();
+		$('#page_eti').hide();
+		$('#page_cgp').hide();
             });
         });
 	ALMemory.subscriber("Presentation_filiere").done(function(subscriber) {
@@ -74,7 +87,10 @@ $(document).ready(function () {
 		$('#page_01').hide();
 		$('#page_1').hide();
 		$('#page_3').hide();
-
+		$('#Translate_Java').hide();
+		$('#page_irc').hide();
+		$('#page_eti').hide();
+		$('#page_cgp').hide();
 		    });
 		});
 
@@ -87,9 +103,78 @@ $(document).ready(function () {
 		$('#page_01').hide();
 		$('#page_1').hide();
 		$('#page_2').hide();
-
+		$('#Translate_Java').hide();
+		$('#page_irc').hide();
+		$('#page_eti').hide();
+		$('#page_cgp').hide();
 		    });
 		});
+
+	ALMemory.subscriber("translate").done(function(subscriber) {
+	
+	      subscriber.signal.connect(function() {
+		
+		$('#page_eti').show();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#Translate_Java').hide();
+		$('#page_irc').hide();
+		$('#page_3').hide();
+		$('#page_cgp').hide();
+		});
+ALMemory.subscriber("page_irc").done(function(subscriber) {
+	
+	      subscriber.signal.connect(function() {
+		
+		$('#page_irc').show();
+		$('#page_eti').hide();
+		$('#page_cgp').hide();
+		$('#Translate_Java').hide();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		    });
+		});
+ALMemory.subscriber("page_cgp").done(function(subscriber) {
+	
+	      subscriber.signal.connect(function() {
+		$('#page_cgp').show();
+		$('#page_irc').hide();
+		$('#page_eti').hide();
+		$('#Translate_Java').hide();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		    });
+		});
+
+	ALMemory.subscriber("Translate_vers_Java").done(function(subscriber) {
+            subscriber.signal.connect(function() {
+		RobotUtils.onService(function(ALMemory) {
+                ALMemory.getData("Translate_vers_Java").then(function(var_TextTraduit) {
+                  	document.getElementById("Text_traduit").innerHTML =var_TextTraduit;
+               		});
+              	});
+   		$('#Translate_Java').show();
+		$('#page_eti').hide();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_irc').hide();
+		$('#page_cgp').hide();
+            });
+        });
 
     });
 
@@ -99,57 +184,32 @@ $(document).ready(function () {
         });
     }
 
-    $('#page_01').on('click', function() {
-        console.log("click 0");
-        raise('eve_vers_commande', 1)
+    $('#translate_vers_python').on('click', function() {
+        console.log("button_translate");
+	var element = document.getElementById("phrase_a-traduire")
+	var monTexte = element.innerText || element.textContent
+        raise('translate',monTexte)
     });
 
-    $('#eve_eau').on('click', function() {
+    $('#tablette_vers_page3').on('click', function() {
         console.log("click 1");
-        raise('eve_commande_eau', 1)
+        raise('Presentation_filiere1', 1)
     });
 
-    $('#eve_soda').on('click', function() {
+    $('#eti').on('click', function() {
         console.log("click 2");
-        raise('eve_commande_soda', 1)
+        raise('translate', 1)
     });
 
-    $('#eve_biere').on('click', function() {
+    $('#cgp').on('click', function() {
         console.log("click 3");
-        raise('eve_commande_biere', 1)
+        raise('page_cgp', 1)
     });
 
-    $('#eve_orange').on('click', function() {
+    $('#irc').on('click', function() {
         console.log("click 4");
-        raise('eve_commande_orange', 1)
+        raise('page_irc', 1)
     });
 
-    $('#eve_cocktail').on('click', function() {
-        console.log("click 5");
-        raise('eve_commande_cocktail', 1)
-    });
-
-    $('#eve_gazeuse').on('click', function() {
-        console.log("click 6");
-        raise('eve_commande_gazeuse', 1)
-    });
-  $('#eve_vodka').on('click', function() {
-        console.log("click 7");
-        raise('eve_commande_vodka', 1)
-    });
-
-
-  $('#eve_wisky').on('click', function() {
-        console.log("click 8");
-        raise('eve_commande_wisky', 1)
-    });
-
-
-  $('#eve_pomme').on('click', function() {
-        console.log("click 9");
-        raise('eve_commande_pomme', 1)
-    });
-
-
-
+    
 });

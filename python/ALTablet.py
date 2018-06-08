@@ -1,46 +1,55 @@
 #! /usr/bin/env python
 # -*- encoding: UTF-8 -*-
 
-""" utiliser la tablette """
-
 import qi
 import argparse
 import sys
+import time
 
-def main(session):
 
-    # Se connecte à ALTabletService
-    ALTabletService = session.service("ALTabletService")
-    # commence une nouvelle application sur la tablette
-    ALTabletService.loadApplication("../html/index.html")
+def main(robot_session):
+
+    # Get the service ALTabletService.
+
     try:
-        #Appuyer sur entrer pour mettre fin au service
-        raw_input("\nSpeak to the robot using rules from the just loaded .top file. Press Enter when finished:")
-    finally:
-        print("\nFin du service ALTabletService") 
+        tabletService = robot_session.service("ALTabletService")
+
+        # Display the index.html page of a behavior name j-tablet-browser
+        # The index.html must be in a folder html in the behavior folder
+        tabletService.loadApplication("WAN")
+        tabletService.showWebview()
+       # enCours = 1;
+#        while (int(enCours)):
+#            enCours = raw_input("Entrer 0 pour terminer!")
+#        
+#
+#        # Hide the web view
+#        tabletService.hideWebview()
+#    except Exception, e:
+#        print "Error was: ", e
+        
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print "Interrupted by user, stopping tablette"
+        tabletService.hideWebview()
+        #stop
+        sys.exit(0)
+
 
 
 if __name__ == "__main__":
-    """
-    Le texte type pour se connecter au Pepper est le suivant:
-        
-        python ~/Documents/Projet Majeure/python/ALTablet.py --ip $YOUR_ROBOTS_IP_ADDRESS
-        
-        Pepper1 : ip = 134.214.50.49
-        
-    """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ip", type=str, default="127.0.0.1",
-                        help="Robot's IP address. If on a robot or a local Naoqi - use '127.0.0.1' (this is the default value).")
+    parser.add_argument("--ip", type=str, default="134.214.50.49",
+                        help="Robot IP address. On robot or Local Naoqi: use '134.214.50.49'.")
     parser.add_argument("--port", type=int, default=9559,
-                        help="port number, the default value is OK in most cases")
+                        help="Naoqi port number")
 
     args = parser.parse_args()
-    session = qi.Session()
+    robot_session = qi.Session()
     try:
-        session.connect("tcp://{}:{}".format(args.ip))
+        robot_session.connect("tcp://" + args.ip + ":" + str(args.port))
     except RuntimeError:
-        print ("\nCan't connect to Naoqi at IP {} (port {}).\nPlease check your script's arguments."
-               " Run with -h option for help.\n".format(args.ip))
+        print ("Can't connect to Naoqi at ip \"" + args.ip + "\" on port " + str(args.port) +".\n"+"Please check your script arguments. Run with -h option for help.")
         sys.exit(1)
-    main(session)
+    main(robot_session)

@@ -13,20 +13,18 @@ def main(robot_session):
 
     try:
         tabletService = robot_session.service("ALTabletService")
-
         # Display the index.html page of a behavior name j-tablet-browser
         # The index.html must be in a folder html in the behavior folder
         tabletService.loadApplication("WAN")
         tabletService.showWebview()
-        enCours = 1;
-        while (int(enCours)):
-            enCours = raw_input("Entrer 0 pour terminer!")
-        
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+            print "Interrupted by user, stopping tablette"
+            tabletService.hideWebview()
+            #stop
+            sys.exit(0)
 
-        # Hide the web view
-        tabletService.hideWebview()
-    except Exception, e:
-        print "Error was: ", e
 
 
 if __name__ == "__main__":
