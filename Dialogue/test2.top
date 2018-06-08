@@ -44,6 +44,6 @@ u:(~repete) Je répète ^sameProposal
 u:(~merci) ~deRien
 u:(~adieu) ~adieu
 
-u:(e:MiddleTactilTouched) Tu touches ma tête là $Translate=1
+u:(e:MiddleTactilTouched) Tu touches ma tête là $translate=1
 u:(e:RightBumperPressed) C'est mon pied ça
 u:(e:LeftBumperPressed) C'est mon pied ça

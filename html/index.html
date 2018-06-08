@@ -12,6 +12,8 @@
 		<meta/>
 		<script src="jquery-1.11.2.min.js"></script>
 		<script src="JavaScript/Test.js"></script>
+		<script src="JavaScript/robotutils.js"></script>
+		<script src="JavaScript/jquery-1.11.2.min.js"></script>
 		<script src="/libs/qimessaging/1.0/qimessaging.js"></script>
 		
 
@@ -19,37 +21,76 @@
 
 <body>
 	<div id="page_00">
-		<p align="center"><img src="Pepperrr13n.jpg" alt="" /></p>
+		<p align="center"><img src="Image/Pepperrr13n.jpg" alt="" /></p>
 	</div>
 
 	<div id="page_0">
 		<h1 style="text-align:center;">BIENVENUE A CPE</h1>
-		<p align="center"><img src="Logo_CPE_Lyon_112009.jpg" /></p>
+		<p align="center"><img src="Image/Logo_CPE_Lyon_112009.jpg" /></p>
 	</div>	
 
 	<div id="page_01">
 		<h1 style="text-align:center;">BIENVENUE A CPE</h1>
-		<a id="suite_pepper" ><img src="pepper.JPG" /></a>
-		<a href="page_0"><img src="tablette_pepper.JPG" /></a>
+		<a id="suite_pepper" ><img src="Image/pepper.JPG" /></a>
+		<a id="tablette_vers_page3"><img src="Image/tablette_pepper.JPG" /></a>
 	</div>
 
 	
 	<div id="page_1">
 		<h1 style="text-align:center;"> CLASSES PREPA CPE LYON</h1>
-		<p align="center"><img src="prepa.jpg"/></p>
+		<p align="center"><img src="Image/prepa.jpg"/></p>
 	</div>
 
 	<div id="page_2">
 		<h1 style="text-align:center;">VOICI LES DIFFERENTES FILIERES</h1>
-		<p align="center"><img src="filiere.JPG" alt="" /></p>
+		<p align="center"><img src="Image/filiere.JPG" alt="" /></p>
 		<a href="https://www.cpe.fr"><p style="text-align:center;">Appuyez pour faire un tour sur le site de l'école</p></a>
 	</div>
 
 	<div id="page_3">
 		<h1 style="text-align:center;">VOICI LES DIFFERENTES FILIERES</h1>
-		<a id="eti" href="#"><img src="eti.JPG" /></a>
-		<a id="cgp" href="#"><img src="cgp.JPG" /></a>
-		<a id="irc" href="#"><img src="irc.JPG" /></a>
+		<a id="eti"><img src="Image/eti.JPG" /></a>
+		<a id="cgp"><img src="Image/cgp.JPG" /></a>
+		<a id="irc"><img src="Image/irc.JPG" /></a>
+	</div>
+	
+	<div id="page_eti">
+		<h1 style="text-align:center;">Présentation de la formation "Electronique Télécommunication Informatique"</h1>
+		<img src="Image/eti.JPG" />
+		<p id="phrase_a-traduire"> A votre arrivée à CPE Lyon en année 3, vous commencerez par étudier les modules de « tronc commun » pendant 3 semestres (semestres 5, 6 et 7). Comprenez : toute la promotion suit les mêmes modules, tous ensemble ou par groupes (TPs, TDs, projets, langues…).Ensuite, par le choix d’une majeure, les deux derniers semestres suivis du projet de fin d’étude ont pour objectif de vous accompagner dans la maturité de votre projet professionnel en approfondissant vos connaissances issues du tronc commun et en acquérant de nouveaux concepts et méthodes, directement en lien avec les problématiques technologiques issues du monde Industriel et de la Recherche.</p>
+	<a id="translate_ver"><input style="height=200px" type="button" value="Appuyer pour traduire" id = "translate_vers_python"></a>
+
+	</div>
+	<div id="page_cgp">
+		<h1 style="text-align:center;">Présentation de la formation "Electronique Télécommunication Informatique"</h1>
+		<img src="Image/cgp.JPG" />
+		<p id="phrase_a-traduire"> A votre arrivée à CPE Lyon en année 3, vous commencerez par étudier les modules de « tronc commun » pendant 3 semestres (semestres 5, 6 et 7). Comprenez : toute la promotion suit les mêmes modules, tous ensemble ou par groupes (TPs, TDs, projets, langues…). A partir de la fin du semestre 7 et pendant tout le semestre 8, vous pourrez choisir vos modules parmi 5 séries proposant elles-mêmes chacune à 3 à 5 modules au choix : « chimie médicinale », « chimie nucléaire », « stratégies d’analyse », « nanomatériaux », « cosmétologie » sont quelques exemples de ces modules au choix dits « semi-optionnels ».</p>
+	<a id="translate_ver"><input style="height=200px" type="button" value="Appuyer pour traduire" id = "translate_vers_python"></a>
+
 	</div>
 
+	<div id="page_irc">
+		<h1 style="text-align:center;">Présentation de la formation "Electronique Télécommunication Informatique"</h1>
+		<img src="Image/irc.JPG" />
+		<p id="phrase_a-traduire">Les points forts de la formation:Combinaison d’un apprentissage en entreprise et d’un enseignement scientifique et technique de haut niveau. Expérience professionnelle permettant de conduire de vrais projets sur des technologies innovantes dans un secteur porteur et créateur d’emploi. Pluridisciplinarité (3/4 de tronc commun), mais aussi une bonne spécialisation (1/4 de la formation) dans l’une des 3 majeures. 2 mois minimum d’expérience dans une entreprise à l’international. Formation gratuite et rémunérée.</p>
+	<a id="translate_ver"><input style="height=200px" type="button" value="Appuyer pour traduire" id = "translate_vers_python"></a>
+
+	</div>
+
+	<div id="Translate_Java">
+		<h1 style="text-align:center;">voici la traduction demandée</h1>
+		<img src="Image/eti.JPG" />
+		<div id = "Text_traduit"></div>
+	</div>
+	
+	<div id="Translate_Java_cgp">
+		<h1 style="text-align:center;">voici la traduction demandée</h1>
+		<img src="Image/cgp.JPG" />
+		<div id = "Text_traduit"></div>
+	</div>
+	<div id="Translate_Java_irc">
+		<h1 style="text-align:center;">voici la traduction demandée</h1>
+		<img src="Image/irc.JPG" />
+		<div id = "Text_traduit"></div>
+	</div>
 	</body>

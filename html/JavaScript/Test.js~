@@ -1,44 +1,133 @@
 $(document).ready(function () {
-    session = new QiSession();
-
-    $('#page_0').show();
-    $('#page_1').hide();
-    $('#page_2').hide();
-	
-
+	session = new QiSession();
+	$('#page_eti').show();
+	$('#page_01').hide();
+	$('#page_0').hide();
+	$('#page_1').hide();
+	$('#page_2').hide();
+	$('#page_00').hide();
+	$('#page_3').hide();
+	$('#Translate_Java').hide();
 
     session.service("ALMemory").done(function(ALMemory) {
 
-        ALMemory.subscriber("accueil_0").done(function(subscriber) {
+        ALMemory.subscriber("accueil").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_00').show();
+                $('#page_0').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_eti').hide();
+		$('#Translate_Java').hide();
+
+            });
+
+        });
+	ALMemory.subscriber("accueil_0").done(function(subscriber) {
 
             subscriber.signal.connect(function() {
                 $('#page_0').show();
-                $('#page_1').hide();
-                $('#page_2').hide();
+                $('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_eti').hide();
+		$('#Translate_Java').hide();
             });
-        });
 
+        });
 
         ALMemory.subscriber("presentation_prepa").done(function(subscriber) {
 
             subscriber.signal.connect(function() {
                 $('#page_1').show();
                 $('#page_0').hide();
-                $('#page_2').hide();
-
+		$('#page_01').hide();
+		$('#page_00').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_eti').hide();
+		$('#Translate_Java').hide();
             });
         });
 
+        ALMemory.subscriber("choix").done(function(subscriber) {
+
+            subscriber.signal.connect(function() {
+                $('#page_01').show();
+                $('#page_0').hide();
+		$('#page_1').hide();
+		$('#page_00').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		$('#page_eti').hide();
+		$('#Translate_Java').hide();
+            });
+        });
 	ALMemory.subscriber("Presentation_filiere").done(function(subscriber) {
 
-		    subscriber.signal.connect(function() {
-		        $('#page_2').show();
-		        $('#page_0').hide();
-			   $('#page_1').hide();
-
+	      subscriber.signal.connect(function() {
+		$('#page_2').show();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_3').hide();
+		$('#page_eti').hide();
+		$('#Translate_Java').hide();
 		    });
 		});
 
+	ALMemory.subscriber("Presentation_filiere1").done(function(subscriber) {
+
+	      subscriber.signal.connect(function() {
+		$('#page_3').show();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_eti').hide();
+		$('#Translate_Java').hide();
+		    });
+		});
+
+	ALMemory.subscriber("translate").done(function(subscriber) {
+	
+	      subscriber.signal.connect(function() {
+		
+		$('#page_eti').show();
+		$('#Translate_Java').hide();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+		    });
+		});
+
+	ALMemory.subscriber("Translate_vers_Java").done(function(subscriber) {
+            subscriber.signal.connect(function() {
+		RobotUtils.onService(function(ALMemory) {
+                ALMemory.getData("Translate_vers_Java").then(function(var_TextTraduit) {
+                  	document.getElementById("Text_traduit").innerHTML =var_TextTraduit;
+               		});
+              	});
+   		$('#Translate_Java').show();
+		$('#page_eti').hide();
+		$('#page_0').hide();
+		$('#page_00').hide();
+		$('#page_01').hide();
+		$('#page_1').hide();
+		$('#page_2').hide();
+		$('#page_3').hide();
+            });
+        });
 
     });
 
@@ -48,9 +137,9 @@ $(document).ready(function () {
         });
     }
 
-    $('#page_01').on('click', function() {
-        console.log("click 0");
-        raise('eve_vers_commande', 1)
+    $('#Boutton_Translate').on('click', function() {
+        console.log("button_translate");
+        raise('translate',document.getElementById("phrase_a-traduire"))
     });
 
     $('#eve_eau').on('click', function() {

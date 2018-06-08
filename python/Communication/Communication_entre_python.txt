@@ -1,7 +1,1 @@
-Hello World
-bizar
-Merdeeeeeeee
-DemandeDeBlague
-DemandeDeBlague
-DemandeDeBlague
-DemandeDeBlague
+A votre arrivée à CPE Lyon en année 3, vous commencerez par étudier les modules de « tronc commun » pendant 3 semestres (semestres 5, 6 et 7). Comprenez : toute la promotion suit les mêmes modules, tous ensemble ou par groupes (TPs, TDs, projets, langues…).Ensuite, par le choix d’une majeure, les deux derniers semestres suivis du projet de fin d’étude ont pour objectif de vous accompagner dans la maturité de votre projet professionnel en approfondissant vos connaissances issues du tronc commun et en acquérant de nouveaux concepts et méthodes, directement en lien avec les problématiques technologiques issues du monde Industriel et de la Recherche.

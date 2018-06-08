@@ -2,7 +2,7 @@
 <html>
 	<head>
         	
-
+    		<link rel="stylesheet" href="css/style.css">
 		<title>Accueil_Pepper</title>
 
 		<meta name="viewport" http-equiv="Content-Type" content="text/html; charset=UTF-8"
@@ -12,6 +12,8 @@
 		<meta/>
 		<script src="jquery-1.11.2.min.js"></script>
 		<script src="JavaScript/Test.js"></script>
+		<script src="JavaScript/robotutils.js"></script>
+		<script src="JavaScript/jquery-1.11.2.min.js"></script>
 		<script src="/libs/qimessaging/1.0/qimessaging.js"></script>
 		
 
@@ -19,37 +21,49 @@
 
 <body>
 	<div id="page_00">
-		<p align="center"><img src="Pepperrr13n.jpg" alt="" /></p>
+		<p align="center"><img src="Image/Pepperrr13n.jpg" alt="" /></p>
 	</div>
 
 	<div id="page_0">
 		<h1 style="text-align:center;">BIENVENUE A CPE</h1>
-		<p align="center"><img src="Logo_CPE_Lyon_112009.jpg" /></p>
+		<p align="center"><img src="Image/Logo_CPE_Lyon_112009.jpg" /></p>
 	</div>	
 
 	<div id="page_01">
 		<h1 style="text-align:center;">BIENVENUE A CPE</h1>
-		<a id="suite_pepper" ><img src="pepper.JPG" /></a>
-		<a href="page_0"><img src="tablette_pepper.JPG" /></a>
+		<a id="suite_pepper" ><img src="Image/pepper.JPG" /></a>
+		<a id="tabllette_vers_page3"><img src="Image/tablette_pepper.JPG" /></a>
 	</div>
 
 	
 	<div id="page_1">
 		<h1 style="text-align:center;"> CLASSES PREPA CPE LYON</h1>
-		<p align="center"><img src="prepa.jpg"/></p>
+		<p align="center"><img src="Image/prepa.jpg"/></p>
 	</div>
 
 	<div id="page_2">
 		<h1 style="text-align:center;">VOICI LES DIFFERENTES FILIERES</h1>
-		<p align="center"><img src="filiere.JPG" alt="" /></p>
+		<p align="center"><img src="Image/filiere.JPG" alt="" /></p>
 		<a href="https://www.cpe.fr"><p style="text-align:center;">Appuyez pour faire un tour sur le site de l'école</p></a>
 	</div>
 
 	<div id="page_3">
 		<h1 style="text-align:center;">VOICI LES DIFFERENTES FILIERES</h1>
-		<a id="eti" href="#"><img src="eti.JPG" /></a>
-		<a id="cgp" href="#"><img src="cgp.JPG" /></a>
-		<a id="irc" href="#"><img src="irc.JPG" /></a>
+		<a id="eti" href="page_0"><img src="Image/eti.JPG" /></a>
+		<a id="cgp" href="#"><img src="Image/cgp.JPG" /></a>
+		<a id="irc" href="#"><img src="Image/irc.JPG" /></a>
+	</div>
+	
+	<div id="page_eti">
+		<h1 style="text-align:center;">Présentation de la formation "Electronique Télécommunication Informatique"</h1>
+		<img src="Image/eti.JPG" />
+		<p id="phrase_a-traduire"> A votre arrivée à CPE Lyon en année 3, vous commencerez par étudier les modules de « tronc commun » pendant 3 semestres (semestres 5, 6 et 7). Comprenez : toute la promotion suit les mêmes modules, tous ensemble ou par groupes (TPs, TDs, projets, langues…).Ensuite, par le choix d’une majeure, les deux derniers semestres suivis du projet de fin d’étude ont pour objectif de vous accompagner dans la maturité de votre projet professionnel en approfondissant vos connaissances issues du tronc commun et en acquérant de nouveaux concepts et méthodes, directement en lien avec les problématiques technologiques issues du monde Industriel et de la Recherche.</p>
+	<a id="Boutton_Translate"><input type="button" value="Appuyer pour commencer" id = "test-btn "></a>
+
 	</div>
 
+	<div id="Translate_Java">
+		<h1 style="text-align:center;">voici la traduction demandée</h1>
+		<div id = "Text_traduit"></div>
+	</div>
 	</body>

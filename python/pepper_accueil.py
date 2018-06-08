@@ -19,9 +19,6 @@ def main(session, topic_path):
     # Loading the topic given by the user (absolute path is required)
     topf_path =topic_path.decode('utf-8')
     topic_name = ALDialog.loadTopic(topf_path.encode('utf-8'))
-    #topf_path ='/home/nao/projects/Robotcpe/Dialogue/'
-    #topic_name = ALDialog.loadTopic(topf_path)
-    # Activating the loaded topic
     ALDialog.activateTopic(topic_name)
 
     # Starting the dialog engine - we need to type an arbitrary string as the identifier
@@ -40,6 +37,8 @@ def main(session, topic_path):
         # now that the dialog engine is stopped and there are no more activated topics,
         # we can unload our topic and free the associated memory
         ALDialog.unloadTopic(topic_name)
+
+
 
 
 if __name__ == "__main__":

@@ -19,7 +19,15 @@ def write(string):
     fichier = open("Communication/Communication_entre_python.txt","a+")
     fichier.write(string+"\n")
     fichier.close()
-
+    
+def read():
+    fichier = open("Communication/Communication_entre_python.txt","r")
+    file_line = fichier.readlines();
+    for x in file_line:
+        print(x)
+    fichier.close()
+    return file_line[-1]
+    
 class HumanGreeter(object):
     """
     A simple class to react to face detection events.
@@ -89,22 +97,17 @@ class HumanGreeter(object):
         write("DemandeDeBlague")
         RobotDit(session,recupBlague())
     def Translate_event(self, value):
+        val = self.memory.getData("translate")
         print("Evenement : Tranlate ??")
-        if(value!="1"):
-            print("Evenement : une demande de traduction")
-            memory=session.service("ALMemory")
-            val = memory.getData("translate")
-            print(val)
-        #memory.raiseEvent("Translate_vers_Java", Translate(val))
+        if(val!="1"):
+            print("Evenement : une demande de traduction de "+val)
+            t =Translate(val)
+            self.memory.raiseEvent("Translate_vers_Java", t )
     def Translate_vers_Java_event(self, value):
-        print("Evenement : Envoie de la traduction vers java")
+        print("Evenement : Envoie de la traduction vers java"+value)    
         print(value)
 
-        
-        
-        
-        
-        
+
     def run(self):
         """
         Loop on, wait for events until manual interruption.
