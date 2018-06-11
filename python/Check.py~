@@ -25,7 +25,7 @@ def cheikh_action():
     life_service.setAutonomousAbilityEnabled("All",0)
     
     #Check if the programm on the robot is running
-    tts.say("Pépére tchèque")
+    tts.say("Pépére Go")
     
     # Then, wake up.
     motion_service.wakeUp()
@@ -39,7 +39,7 @@ def cheikh_action():
     motion_service.setAngles("LShoulderRoll",0.174533,0.2)
     motion_service.setAngles("LElbowRoll",-0.174533,0.2)
     motion_service.closeHand("LHand")
-    time.sleep(0.5)
+
     tts.say("Boume!")
     
     motion_service.openHand("LHand")

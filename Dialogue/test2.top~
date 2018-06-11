@@ -17,6 +17,8 @@ concept:(stage) [stage]
 concept:(cesure) [césure "année de césure"]
 concept:(amphi) [amphi]
 concept:(check) ["tope la" check tchèque]
+concept:(secret) [secret anecdote]
+concept:(fact) ["Le cachalot peut emettre des cliquetis à plus de 230 décibels" "L'acronyme m l d veut dire médiane léthal dose" "Le citron le plus gros pesait 5 virgule 625 kilos"  "Le record du gainage en planche est de 8 heures et 3 minutes. Et toi?"  " L'éruption des feux de la Skaftá en Islande en 1783 a entrainé des famines dans toute l'Europe" "Le microprocesseur ne voit que de la mémoire" "Roméo n'est pas beau" "L'Olympique Lyonnais est bien supérieur à l'A S saintétienne" "l'escalier du paradis en Suisse a 11674 marches!" "J'aimerais avoir une conscience mais je suis un robot"]
 
 # Catching inputs and triggering outputs
 #u:(e:onStart) $onStopped=1
@@ -26,6 +28,8 @@ u:(~bonjour) $accueil=1 ~bonjour je suis le robot Pépeur. Je peux vous assister
 
 #Checking the user
 u:(~check) Allez, tchèque! $cheikh=1
+
+u:(~secret) ~fact
 
 proposal: %debut Que voulez vous savoir?
     u1:(~presentation) $accueil_0=1 Cépéheu est une école d'ingénieurs qui délivre un diplôme reconnu par la commission des titres d'ingénieur  ^gotoReactivate(suite)
@@ -48,6 +52,6 @@ u:(~repete) Je répète ^sameProposal
 u:(~merci) ~deRien
 u:(~adieu) ~adieu
 
-u:(e:MiddleTactilTouched) Tu touches ma tête là $translate=1
+u:(e:MiddleTactilTouched) Tu touches ma tête là $cheikh=1
 u:(e:RightBumperPressed) C'est mon pied ça
 u:(e:LeftBumperPressed) C'est mon pied ça

@@ -42,7 +42,7 @@ def main(session, topic_path):
     life_service.setAutonomousAbilityEnabled("All",0)
     
     #Check if the programm on the robot is running
-    tts.say("Hé, Dihé?")
+    tts.say("galgolé veut dire verbe en russe")
     
     # Then, wake up.
     motion_service.wakeUp()
